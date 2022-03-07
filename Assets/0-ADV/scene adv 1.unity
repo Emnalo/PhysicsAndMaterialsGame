@@ -204,12 +204,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 74906905}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 1.4142628, y: -3.66, z: 3.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &175862292
 GameObject:
@@ -222,7 +222,7 @@ GameObject:
   - component: {fileID: 175862293}
   m_Layer: 0
   m_Name: BowlingPins
-  m_TagString: Untagged
+  m_TagString: Pin
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -249,7 +249,7 @@ Transform:
   - {fileID: 509937661}
   - {fileID: 1050958051}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &207463507
 PrefabInstance:
@@ -707,7 +707,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 642224799}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: d74ca2dc7e278924c97f92296970a291, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -815,6 +815,10 @@ PlayableDirector:
     value: {fileID: 0}
   - key: {fileID: 5268172227486381929, guid: f391748d2051d664a9b80a483422df70, type: 2}
     value: {fileID: 727276461}
+  - key: {fileID: -4987604845880797022, guid: f391748d2051d664a9b80a483422df70, type: 2}
+    value: {fileID: 175862292}
+  - key: {fileID: 87598873077286179, guid: f391748d2051d664a9b80a483422df70, type: 2}
+    value: {fileID: 1876364477}
   m_ExposedReferences:
     m_References:
     - 5b5002781f24607498906b7dc19556d0: {fileID: 74906905}
@@ -830,7 +834,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &727276464
 MonoBehaviour:
@@ -848,6 +852,7 @@ MonoBehaviour:
     m_Signals:
     - {fileID: 11400000, guid: 27d26064bcc91034cbf16fe4d972a6ef, type: 2}
     - {fileID: 11400000, guid: 9b61d92975ae3d740ba086993d91b03d, type: 2}
+    - {fileID: 11400000, guid: ee8c56a960072bc4c9f717a9bb857347, type: 2}
     m_Events:
     - m_PersistentCalls:
         m_Calls:
@@ -865,9 +870,23 @@ MonoBehaviour:
           m_CallState: 2
     - m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 727276464}
+        - m_Target: {fileID: 1613967513}
           m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
-          m_MethodName: set_enabled
+          m_MethodName: 
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 1
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 175862292}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
           m_Mode: 6
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -989,7 +1008,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 991409830}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: d74ca2dc7e278924c97f92296970a291, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -1094,6 +1113,7 @@ GameObject:
   - component: {fileID: 1035295333}
   - component: {fileID: 1035295332}
   - component: {fileID: 1035295331}
+  - component: {fileID: 1035295335}
   m_Layer: 0
   m_Name: wall3
   m_TagString: Untagged
@@ -1108,7 +1128,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1035295330}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: d74ca2dc7e278924c97f92296970a291, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -1177,6 +1197,102 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
+--- !u!82 &1035295335
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1035295330}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 1d1cac4f27b0c484eb219819623f87de, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.62
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &1050958050
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1337,6 +1453,7 @@ GameObject:
   - component: {fileID: 1564107852}
   - component: {fileID: 1564107851}
   - component: {fileID: 1564107850}
+  - component: {fileID: 1564107854}
   m_Layer: 0
   m_Name: backwall
   m_TagString: Untagged
@@ -1351,7 +1468,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1564107849}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: d74ca2dc7e278924c97f92296970a291, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -1418,8 +1535,22 @@ Transform:
   m_LocalScale: {x: 8.9592, y: 2.7594, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1564107854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1564107849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b58de6bd63498c147b3e1dbd9c1802db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BowlingTimeline: {fileID: 727276462}
+  BowlingSphere: {fileID: 1876364471}
 --- !u!1 &1613967513
 GameObject:
   m_ObjectHideFlags: 0
@@ -1433,6 +1564,7 @@ GameObject:
   - component: {fileID: 1613967517}
   - component: {fileID: 1613967514}
   - component: {fileID: 1613967518}
+  - component: {fileID: 1613967519}
   m_Layer: 0
   m_Name: Camera
   m_TagString: MainCamera
@@ -1566,6 +1698,14 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!81 &1613967519
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1613967513}
+  m_Enabled: 1
 --- !u!1 &1622825678
 GameObject:
   m_ObjectHideFlags: 0
@@ -1657,7 +1797,7 @@ Transform:
   m_LocalScale: {x: 1, y: 0.69027, z: 0.68708}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1001 &1678333808
 PrefabInstance:
@@ -1668,7 +1808,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1717074102527374878, guid: d70bde2b24a38fe4a81cfd54c0e897ca, type: 3}
       propertyPath: m_Name
-      value: BowlingBall
+      value: BowlingSphere
       objectReference: {fileID: 0}
     - target: {fileID: 2062531397743733924, guid: d70bde2b24a38fe4a81cfd54c0e897ca, type: 3}
       propertyPath: m_RootOrder
@@ -1696,11 +1836,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2062531397743733924, guid: d70bde2b24a38fe4a81cfd54c0e897ca, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.49567157
+      value: 0.49567154
       objectReference: {fileID: 0}
     - target: {fileID: 2062531397743733924, guid: d70bde2b24a38fe4a81cfd54c0e897ca, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.49567157
+      value: 0.49567154
       objectReference: {fileID: 0}
     - target: {fileID: 2062531397743733924, guid: d70bde2b24a38fe4a81cfd54c0e897ca, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1718,6 +1858,10 @@ PrefabInstance:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 13400000, guid: 22a969d6079a93045b4e36da06db878d, type: 2}
+    - target: {fileID: 8771530736676514025, guid: d70bde2b24a38fe4a81cfd54c0e897ca, type: 3}
+      propertyPath: m_Mass
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d70bde2b24a38fe4a81cfd54c0e897ca, type: 3}
 --- !u!1 &1725395342 stripped
@@ -1887,6 +2031,134 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1717074102527374878, guid: d70bde2b24a38fe4a81cfd54c0e897ca, type: 3}
   m_PrefabInstance: {fileID: 1678333808}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &1876364477
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1876364471}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1876364478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1876364471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e054ef675347554993deb95845fb129, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundeffect: {fileID: 1876364479}
+--- !u!82 &1876364479
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1876364471}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 781625bb4ebe3044694d8306bb6168e2, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &1929958089
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2026,12 +2298,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6721549042800b44390f8f55347d2d06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BowlingPins: {fileID: 0}
+  BowlingPins: {fileID: 175862292}
   Camera: {fileID: 1613967515}
-  BowlingBall: {fileID: 1876364471}
-  BowlingTimeline: {fileID: 727276462}
-  PositionPinReady: {fileID: 0}
-  GameReady: {fileID: 0}
+  BowlingSphere: {fileID: 1876364471}
 --- !u!4 &2112348432
 Transform:
   m_ObjectHideFlags: 0
@@ -2044,5 +2313,5 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
