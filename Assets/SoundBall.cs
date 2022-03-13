@@ -5,6 +5,8 @@ using UnityEngine;
 public class SoundBall : MonoBehaviour
 {
     public AudioSource soundeffect;
+    public ParticleSystem ConfettiSystem;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +21,13 @@ public class SoundBall : MonoBehaviour
 
     private void OnCollisionEnter(Collision other) {
         if(other.gameObject.tag == "Pin"){
-          soundeffect.PlayOneShot(soundeffect.clip,0.4f);
+          ConfettiSystem.Play();
+          if(soundeffect.isPlaying){
+
+          }
+          else{
+           soundeffect.PlayOneShot(soundeffect.clip,0.4f); 
+          }
         }
     }
 }

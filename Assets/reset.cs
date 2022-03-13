@@ -7,6 +7,7 @@ public class reset : MonoBehaviour
     // Start is called before the first frame update
     public PlayableDirector BowlingTimeline;
     public GameObject BowlingSphere;
+    public ParticleSystem ConfettiSystem;
     private Vector3 initialposball;
     private Quaternion initialrotball;
     private Rigidbody ballrigid;
@@ -20,12 +21,19 @@ public class reset : MonoBehaviour
     void Update()
     {
        if(Input.GetKey("space")){
+           if(BowlingTimeline.state == PlayState.Playing){
+               ConfettiSystem.Stop();
+            }
+        else{
         BowlingSphere.transform.position = initialposball;
         BowlingSphere.transform.rotation = initialrotball;
         ballrigid.velocity = Vector3.zero;
         ballrigid.angularVelocity = Vector3.zero;
         BowlingTimeline.Play();
-       }
+        BowlingTimeline.time = 2;
+        BowlingTimeline.Evaluate();
+         }
+        }
     }
 
     private void OnCollisionEnter(Collision other){
@@ -38,12 +46,14 @@ public class reset : MonoBehaviour
     } 
 
     IEnumerator PlaytimelineCoroutine(){
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(10);
         BowlingSphere.transform.position = initialposball;
         BowlingSphere.transform.rotation = initialrotball;
         ballrigid.velocity = Vector3.zero;
         ballrigid.angularVelocity = Vector3.zero;
         BowlingTimeline.Play();
+        BowlingTimeline.time = 2;
+        BowlingTimeline.Evaluate();
     }
     
 }
